@@ -17,33 +17,39 @@
 
         .center-div {
             background-color: #FFFFFF;
+            height: auto;
             width: 1200px;
-            height: 1500px;
         }
 
         .nav {
-            background-color: red;
+            background-color: #9DFF00;
             position: fixed;
             width: 1200px;
             height: 50px;
-            border-radius: 5px;
+            border-radius: 0px;
             margin-top: 0px;
             margin-bottom: 50px;
         }
 
         .test-button {
-            margin: 5px;
+            margin-top:5px;
+            margin-right: 10px;
+        }
+
+        .footer {
+            background-color: black;
+            width: 1200px;
+            height: 50px;
         }
 
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 693px;
-        }
+
         .auto-style3 {
             width: 5693px;
         }
+
         .auto-style4 {
             width: 1407px;
         }
@@ -53,16 +59,10 @@
     <form id="form1" runat="server">
         <div class="center-div">
             <div class="nav">
-                <%--<div><asp:Label Text="NAV" runat="server" /></div>
-                
-                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />
-                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />
-                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />
-                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />--%>
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style4">
-                            <div style="background-color: antiquewhite; text-align:center; width: 100px; margin-right: 10px">
+                            <div style="background-color: antiquewhite; text-align: center; width: 100px; margin-right: 10px">
                                 <asp:Label Text="TEST-SİTE" runat="server" />
                             </div>
                         </td>
@@ -70,7 +70,7 @@
                             <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
                         <td class="auto-style3">
                             <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
-                        <td class="auto-style2">
+                        <td>
                             <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
                         <td>
                             <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
@@ -83,7 +83,15 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                 </div>
             </div>
+
         </div>
+        <footer class="footer">
+            <div>
+                <asp:Label Text="TEST-SİTE" runat="server" ForeColor="White" />
+            </div>
+        </footer>
+
     </form>
 </body>
+
 </html>

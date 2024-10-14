@@ -2,16 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-    .auto-style5 {
-        color: #FFFF00;
-    }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    test<br />
-    test
-    <div style="background-color: blue; margin: 30px; height: 200px;" class="auto-style5">TEST RESİM</div>
+    <div style="background-color: blue; margin-top: 30px; height: 400px; color: #FFFF00">TEST RESİM</div>
     <br />
+    test
     <br />
     <br />
     test<br />
@@ -19,4 +15,5 @@
     test
     <br />
     test 
+    <div style="height: 1000px;"></div>
 </asp:Content>
