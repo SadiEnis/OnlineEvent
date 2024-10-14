@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="OnlineEvent.Page" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>TEST SİTE</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Yatayda ortalar */
+
+            background-color: #dfdfdf;
+        }
+
+        .center-div {
+            background-color: #FFFFFF;
+            width: 1200px;
+            height: 1500px;
+        }
+
+        .nav {
+            background-color: red;
+            position: fixed;
+            width: 1200px;
+            height: 50px;
+            border-radius: 5px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+
+        .test-button {
+            margin: 5px;
+        }
+
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 693px;
+        }
+        .auto-style3 {
+            width: 5693px;
+        }
+        .auto-style4 {
+            width: 1407px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="center-div">
+            <div class="nav">
+                <%--<div><asp:Label Text="NAV" runat="server" /></div>
+                
+                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />
+                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />
+                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />
+                <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" />--%>
+                <table class="auto-style1">
+                    <tr>
+                        <td class="auto-style4">
+                            <div style="background-color: antiquewhite; text-align:center; width: 100px; margin-right: 10px">
+                                <asp:Label Text="TEST-SİTE" runat="server" />
+                            </div>
+                        </td>
+                        <td>
+                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
+                        <td class="auto-style3">
+                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
+                        <td class="auto-style2">
+                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
+                        <td>
+                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                &nbsp;
+                <div style="margin-top: 50px;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
