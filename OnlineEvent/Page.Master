@@ -31,10 +31,43 @@
             margin-bottom: 50px;
         }
 
-        .test-button {
-            margin-top:5px;
-            margin-right: 10px;
+        .login-button {
+            margin: auto;
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+            border-radius: 10px;
         }
+
+            .login-button:hover {
+                border-color: gold;
+                background-color: black;
+                color: gold;
+            }
+
+        .search-txt {
+            margin: auto;
+            border-style: solid;
+            border-radius: 10px;
+            border: 2px;
+        }
+
+            .search-txt:hover {
+                border-color: gold;
+                background-color: black;
+                color: gold;
+            }
+
+        .search-btn {
+            margin: auto;
+            height: 30px;
+            width: 30px;
+            background-image: url("../Assets/Media/search.png");
+        }
+
+            .search-btn:hover {
+                background-image: url("../Assets/Media/search-gold.png");
+            }
 
         .footer {
             background-color: black;
@@ -47,11 +80,22 @@
         }
 
         .auto-style3 {
-            width: 5693px;
+            text-align: right;
+            width: 300px;
         }
 
         .auto-style4 {
             width: 1407px;
+        }
+
+        .auto-style5 {
+            width: 9759px;
+        }
+
+        .auto-style6 {
+            width: 280px;
+            margin: auto;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -60,20 +104,27 @@
         <div class="center-div">
             <div class="nav">
                 <table class="auto-style1">
-                    <tr>
+                    <tr style="height: 50px">
                         <td class="auto-style4">
-                            <div style="background-color: antiquewhite; text-align: center; width: 100px; margin-right: 10px">
-                                <asp:Label Text="TEST-SİTE" runat="server" />
+                            <div style="background-color: antiquewhite; text-align: center; width: 100px; margin: auto;">
+                                <a href="MainPage.aspx">
+                                    <asp:Label Text="TEST-SİTE" runat="server" />
+                                </a>
+                            </div>
+                        </td>
+                        <td class="auto-style5">&nbsp;</td>
+                        <td class="auto-style3">
+                            <div class="auto-style6">
+                                <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="200px" CssClass="search-txt">Ara...</asp:TextBox>
+                                <asp:LinkButton ID="btnSearch" runat="server" Height="20px" Width="20px" OnClick="btnSearch_Click">
+                                    <div class="search-btn"></div>
+                                </asp:LinkButton>
                             </div>
                         </td>
                         <td>
-                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
-                        <td class="auto-style3">
-                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
+                            <asp:Button Text="Giriş Yap" runat="server" Height="30px" Width="120px" CssClass="login-button" ID="btnSignIn" OnClick="btnSignIn_Click" /></td>
                         <td>
-                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
-                        <td>
-                            <asp:Button Text="Test Button" runat="server" Height="40px" Width="120px" CssClass="test-button" /></td>
+                            <asp:Button Text="Kayıt Ol" runat="server" Height="30px" Width="120px" CssClass="login-button" ID="btnSignUp" OnClick="btnSignUp_Click" /></td>
                     </tr>
                 </table>
             </div>
@@ -87,7 +138,7 @@
         </div>
         <footer class="footer">
             <div>
-                <asp:Label Text="TEST-SİTE" runat="server" ForeColor="White" />
+                <asp:Label Text="TEST-SİTE" runat="server" ForeColor="Gold" />
             </div>
         </footer>
 

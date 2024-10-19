@@ -67,20 +67,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MainPagee.aspx" />
+    <Content Include="Assets\Media\search-gold.png" />
+    <Content Include="Assets\Media\search.png" />
+    <Content Include="LoginPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="MainPage.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainPagee.aspx.cs">
-      <DependentUpon>MainPagee.aspx</DependentUpon>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MainPagee.aspx.designer.cs">
-      <DependentUpon>MainPagee.aspx</DependentUpon>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
