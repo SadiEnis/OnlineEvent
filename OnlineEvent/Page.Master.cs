@@ -21,7 +21,7 @@ namespace OnlineEvent
 
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("RegisterPage.aspx");
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

@@ -70,6 +70,8 @@
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="RegisterPage.aspx" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
     <Content Include="MainPage.aspx" />
   </ItemGroup>
@@ -95,6 +97,13 @@
     </Compile>
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

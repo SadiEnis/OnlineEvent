@@ -11,7 +11,7 @@ namespace OnlineEvent
 {
 
 
-    public partial class Login
+    public partial class RegisterPage
     {
 
         /// <summary>

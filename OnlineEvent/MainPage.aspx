@@ -5,7 +5,7 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="background-color: blue; margin-top: 30px; height: 400px; color: #FFFF00">TEST RESİM</div>
+    <div style="margin-top: 30px; height: 400px; color: black;">TEST RESİM</div>
     <br />
     test
     <br />

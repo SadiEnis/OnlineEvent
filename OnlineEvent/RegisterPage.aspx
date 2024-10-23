@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="OnlineEvent.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="RegisterPage.aspx.cs" Inherits="OnlineEvent.RegisterPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="style.css" rel="stylesheet" />
     <style type="text/css">
         .login {
             width: 400px;
@@ -46,6 +45,9 @@
             .login-txt:focus {
                 border-radius: 12px;
             }
+            .login-txt::placeholder {
+
+            }
 
         td a {
             color: black;
@@ -70,36 +72,50 @@
             height: 35px;
         }
 
-        .auto-style20 {
-            font-size: x-large;
-            height: 29px;
-            text-align: center;
+        .auto-style18 {
+            width: 141px;
         }
     </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="background-color: white;" class="login">
         <table class="login-table">
             <tr>
-                <td class="auto-style20" colspan="2">
-                    &nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style20" colspan="2">
-                    <strong>Hoş Geldiniz</strong>
-                </td>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style12" colspan="2">
-                    <hr style="width: 250px; noshade" />
-                </td>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style12">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style12" colspan="2"><strong>E-Posta</strong></td>
             </tr>
             <tr>
-                <td class="auto-style12" colspan="2"><asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt"></asp:TextBox>
-                    </td>
+                <td class="auto-style12" colspan="2">
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="Mail"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style12" colspan="2">
@@ -116,8 +132,8 @@
                 </td>
             </tr>
             <tr>
-                <td style="text-align:left;">
-                    <a href="RegisterPage.aspx"><strong>Hesap Oluştur</strong></a></td>
+                <td style="text-align: left;">
+                    <a href="#"><strong>Hesap Oluştur</strong></a></td>
                 <td class="auto-style15">
                     <a href="#"><strong>Şifremi Unuttum</strong></a></td>
             </tr>

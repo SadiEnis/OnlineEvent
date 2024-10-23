@@ -6,75 +6,8 @@
 <head runat="server">
     <title>TEST SİTE</title>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <link href="style.css" rel="stylesheet" />
     <style>
-        html, body {
-            height: 100%;
-            display: flex;
-            justify-content: center; /* Yatayda ortalar */
-
-            background-color: #dfdfdf;
-        }
-
-        .center-div {
-            background-color: #FFFFFF;
-            height: auto;
-            width: 1200px;
-        }
-
-        .nav {
-            background-color: #9DFF00;
-            position: fixed;
-            width: 1200px;
-            height: 50px;
-            border-radius: 0px;
-            margin-top: 0px;
-            margin-bottom: 50px;
-        }
-
-        .login-button {
-            margin: auto;
-            border-width: 2px;
-            border-style: solid;
-            border-color: black;
-            border-radius: 10px;
-        }
-
-            .login-button:hover {
-                border-color: gold;
-                background-color: black;
-                color: gold;
-            }
-
-        .search-txt {
-            margin: auto;
-            border-style: solid;
-            border-radius: 10px;
-            border: 2px;
-        }
-
-            .search-txt:hover {
-                border-color: gold;
-                background-color: black;
-                color: gold;
-            }
-
-        .search-btn {
-            margin: auto;
-            height: 30px;
-            width: 30px;
-            background-image: url("../Assets/Media/search.png");
-        }
-
-            .search-btn:hover {
-                background-image: url("../Assets/Media/search-gold.png");
-            }
-
-        .footer {
-            background-color: black;
-            width: 1200px;
-            height: 50px;
-        }
-
         .auto-style1 {
             width: 100%;
         }
@@ -85,21 +18,27 @@
         }
 
         .auto-style4 {
-            width: 1407px;
+            width: 5000px;
         }
 
         .auto-style5 {
-            width: 9759px;
+            width: 10000px;
         }
 
         .auto-style6 {
-            width: 280px;
-            margin: auto;
+            width: 230px;
             margin-right: 10px;
+            margin-left: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .auto-style7 {
+            width: 140px;
         }
     </style>
 </head>
-<body>
+<body style="width: 1201px">
     <form id="form1" runat="server">
         <div class="center-div">
             <div class="nav">
@@ -112,7 +51,26 @@
                                 </a>
                             </div>
                         </td>
-                        <td class="auto-style5">&nbsp;</td>
+                        <td class="auto-style5">
+                            <table class="auto-style1">
+                                <tr>
+                                    <td class="auto-style7">
+                                        <asp:Button ID="btnMainPage" runat="server" Text="Ana Sayfa" CssClass="nav-button" />
+                                    </td>
+                                    <td class="auto-style7">
+                                        <asp:Button ID="btnEvents" runat="server" Text="Etkinlikler" CssClass="nav-button" />
+                                    <td class="auto-style7">
+                                        <asp:Button ID="btnComminity" runat="server" Text="Topluluklar" CssClass="nav-button" />
+
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btn" runat="server" Text="Button" CssClass="nav-button" />
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
                         <td class="auto-style3">
                             <div class="auto-style6">
                                 <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="200px" CssClass="search-txt">Ara...</asp:TextBox>
@@ -134,14 +92,16 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                 </div>
             </div>
-
         </div>
         <footer class="footer">
-            <div>
-                <asp:Label Text="TEST-SİTE" runat="server" ForeColor="Gold" />
-            </div>
+            <asp:Label Text="TEST-SİTE" runat="server"/>
+            <hr style="width: 1000px; color: gold;" />
+            <p>
+                Sadi Enis Güçlüer
+                <br />
+                İrem Ayten
+            </p>
         </footer>
-
     </form>
 </body>
 
