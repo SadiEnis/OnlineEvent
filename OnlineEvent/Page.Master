@@ -55,7 +55,7 @@
                             <table class="auto-style1">
                                 <tr>
                                     <td class="auto-style7">
-                                        <asp:Button ID="btnMainPage" runat="server" Text="Ana Sayfa" CssClass="nav-button" />
+                                        <asp:Button ID="btnMainPage" runat="server" Text="Ana Sayfa" CssClass="nav-button" OnClick="btnMainPage_Click" />
                                     </td>
                                     <td class="auto-style7">
                                         <asp:Button ID="btnEvents" runat="server" Text="Etkinlikler" CssClass="nav-button" />
@@ -73,7 +73,7 @@
                         </td>
                         <td class="auto-style3">
                             <div class="auto-style6">
-                                <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="200px" CssClass="search-txt">Ara...</asp:TextBox>
+                                <asp:TextBox ID="txtSearch" runat="server" Height="25px" Width="200px" CssClass="search-txt" placeholder="Ara.."></asp:TextBox>
                                 <asp:LinkButton ID="btnSearch" runat="server" Height="20px" Width="20px" OnClick="btnSearch_Click">
                                     <div class="search-btn"></div>
                                 </asp:LinkButton>

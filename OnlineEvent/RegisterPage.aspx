@@ -19,11 +19,13 @@
         }
 
         .login-btn {
-            width: 100px;
+            width: 200px;
             height: 30px;
             border: solid 1px;
             border-color: black;
             border-radius: 10px;
+            font-size: 15px;
+            margin: 10px;
         }
 
             .login-btn:hover {
@@ -36,17 +38,20 @@
             border: solid 1px;
             border-color: black;
             border-radius: 10px;
+            margin: 3px;
+            font-size: 15px;
         }
 
             .login-txt:hover {
-                border-radius: 12px;
+                border-radius: 15px;
+                border: solid 2px;
             }
 
             .login-txt:focus {
                 border-radius: 12px;
             }
-            .login-txt::placeholder {
 
+            .login-txt::placeholder {
             }
 
         td a {
@@ -55,7 +60,11 @@
         }
 
         hr {
-            width: 130px;
+            width: 250px;
+            border: none;
+            height: 2px;
+            background-color: black;
+            box-shadow: none;
         }
 
         .auto-style11 {
@@ -68,12 +77,14 @@
         }
 
         .auto-style15 {
-            text-align: right;
+            text-align: center;
             height: 35px;
         }
 
-        .auto-style18 {
-            width: 141px;
+        .auto-style20 {
+            font-size: x-large;
+            height: 29px;
+            text-align: center;
         }
     </style>
 </asp:Content>
@@ -82,60 +93,52 @@
     <div style="background-color: white;" class="login">
         <table class="login-table">
             <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
+                <td class="auto-style20" colspan="2">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style12">&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style12" colspan="2"><strong>E-Posta</strong></td>
-            </tr>
-            <tr>
-                <td class="auto-style12" colspan="2">
-                    <asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="Mail"></asp:TextBox>
+                <td class="auto-style20" colspan="2">
+                    <strong>Kayıt Ol</strong>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style12" colspan="2">
-                    <strong>Şifre</strong></td>
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12" colspan="2">
+                    <asp:TextBox ID="txtName" runat="server" CssClass="login-txt" placeholder="İsim"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12" colspan="2">
+                    <asp:TextBox ID="txtLastname" runat="server" CssClass="login-txt" placeholder="Soyisim"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12" colspan="2">
+                    <div style="height: 20px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12" colspan="2">
+                    <asp:TextBox ID="txtMail" runat="server" CssClass="login-txt" placeholder="E-Posta"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style11" colspan="2">
-                    <asp:TextBox ID="txtSifre" runat="server" CssClass="login-txt"></asp:TextBox>
+                    <asp:TextBox ID="txtSifre" runat="server" CssClass="login-txt" placeholder="Şifre" TextMode="Password"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style11" colspan="2">
+                    <asp:TextBox ID="txtSifreAgain" runat="server" CssClass="login-txt" placeholder="Şifre Tekrar" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style15" colspan="2">
-                    <asp:Button ID="btnLogin" runat="server" Height="30px" Text="Giriş Yap" CssClass="login-btn" />
+                    <asp:Button ID="btnRegister" runat="server" Height="30px" Text="Kayıt Ol" CssClass="login-btn" />
                 </td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">
-                    <a href="#"><strong>Hesap Oluştur</strong></a></td>
-                <td class="auto-style15">
-                    <a href="#"><strong>Şifremi Unuttum</strong></a></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
@@ -143,5 +146,5 @@
             </tr>
         </table>
     </div>
-    <div style="height: 200px"></div>
+    <div style="height: 50px"></div>
 </asp:Content>

@@ -20,11 +20,13 @@
         }
 
         .login-btn {
-            width: 100px;
+            width: 200px;
             height: 30px;
             border: solid 1px;
             border-color: black;
             border-radius: 10px;
+            font-size: 15px;
+            margin: 10px;
         }
 
             .login-btn:hover {
@@ -37,10 +39,13 @@
             border: solid 1px;
             border-color: black;
             border-radius: 10px;
+            margin: 3px;
+            font-size: 15px;
         }
 
             .login-txt:hover {
-                border-radius: 12px;
+                border-radius: 15px;
+                border: solid 2px;
             }
 
             .login-txt:focus {
@@ -53,7 +58,11 @@
         }
 
         hr {
-            width: 130px;
+            width: 250px;
+            border: none;
+            height: 2px;
+            background-color: black;
+            box-shadow: none;
         }
 
         .auto-style11 {
@@ -75,6 +84,9 @@
             height: 29px;
             text-align: center;
         }
+        .auto-style21 {
+            text-align: center;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -86,32 +98,25 @@
             </tr>
             <tr>
                 <td class="auto-style20" colspan="2">
-                    <strong>Hoş Geldiniz</strong>
+                    <strong>Giriş Yap</strong>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style12" colspan="2">
-                    <hr style="width: 250px; noshade" />
+                    <hr />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style12" colspan="2"><strong>E-Posta</strong></td>
-            </tr>
-            <tr>
-                <td class="auto-style12" colspan="2"><asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt"></asp:TextBox>
+                <td class="auto-style12" colspan="2"><asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="E-Posta"></asp:TextBox>
                     </td>
             </tr>
             <tr>
-                <td class="auto-style12" colspan="2">
-                    <strong>Şifre</strong></td>
-            </tr>
-            <tr>
                 <td class="auto-style11" colspan="2">
-                    <asp:TextBox ID="txtSifre" runat="server" CssClass="login-txt"></asp:TextBox>
+                    <asp:TextBox ID="txtSifre" runat="server" CssClass="login-txt" placeholder="Şifre" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style15" colspan="2">
+                <td class="auto-style21" colspan="2">
                     <asp:Button ID="btnLogin" runat="server" Height="30px" Text="Giriş Yap" CssClass="login-btn" />
                 </td>
             </tr>
@@ -127,5 +132,5 @@
             </tr>
         </table>
     </div>
-    <div style="height: 200px"></div>
+    <div style="height: 50px"></div>
 </asp:Content>

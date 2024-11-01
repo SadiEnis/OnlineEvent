@@ -23,10 +23,15 @@ namespace OnlineEvent
         {
             Response.Redirect("RegisterPage.aspx");
         }
+        protected void btnMainPage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainPage.aspx");
+        }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }
