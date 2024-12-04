@@ -16,16 +16,16 @@ namespace OnlineEvent
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("LoginPage.aspx");
+            Response.Redirect("/LoginPage.aspx");
         }
 
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegisterPage.aspx");
+            Response.Redirect("/RegisterPage.aspx");
         }
         protected void btnMainPage_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MainPage.aspx");
+            Response.Redirect("/MainPage.aspx");
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

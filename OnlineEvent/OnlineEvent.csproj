@@ -67,12 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Media\42-photo11.jpg" />
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="RegisterPage.aspx" />
     <Content Include="style.css" />
     <Content Include="User\UserProfile.aspx" />
+    <Content Include="User\UserProfile1.aspx" />
     <Content Include="Web.config" />
     <Content Include="MainPage.aspx" />
   </ItemGroup>
@@ -112,6 +114,13 @@
     </Compile>
     <Compile Include="User\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserProfile1.aspx.cs">
+      <DependentUpon>UserProfile1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserProfile1.aspx.designer.cs">
+      <DependentUpon>UserProfile1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
