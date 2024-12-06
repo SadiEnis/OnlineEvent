@@ -24,6 +24,7 @@
             border: solid 1px;
             border-color: black;
             border-radius: 10px;
+            background-color: white;
             font-size: 15px;
             margin: 10px;
         }

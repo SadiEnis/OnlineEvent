@@ -70,14 +70,26 @@
     <Content Include="Assets\Media\42-photo11.jpg" />
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
+    <Content Include="Assets\Media\share.png" />
+    <Content Include="CreateEvent.aspx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="Profiles\ComminityPage.aspx" />
+    <Content Include="Profiles\Commity.aspx" />
+    <Content Include="Profiles\Profile.aspx" />
     <Content Include="RegisterPage.aspx" />
     <Content Include="style.css" />
-    <Content Include="User\UserProfile.aspx" />
+    <Content Include="Profiles\UserProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="MainPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEvent.aspx.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateEvent.aspx.designer.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,6 +103,27 @@
     </Compile>
     <Compile Include="Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\ComminityPage.aspx.cs">
+      <DependentUpon>ComminityPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\ComminityPage.aspx.designer.cs">
+      <DependentUpon>ComminityPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Commity.aspx.cs">
+      <DependentUpon>Commity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\Commity.aspx.designer.cs">
+      <DependentUpon>Commity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainPage.aspx.cs">
@@ -107,11 +140,11 @@
     <Compile Include="RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\UserProfile.aspx.cs">
+    <Compile Include="Profiles\UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="User\UserProfile.aspx.designer.cs">
+    <Compile Include="Profiles\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
