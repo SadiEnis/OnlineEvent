@@ -30,10 +30,5 @@ namespace OnlineEvent
             panelInfo.Visible = false;
             panelAttendee.Visible = true;
         }
-
-        protected void btnBuyTicket_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

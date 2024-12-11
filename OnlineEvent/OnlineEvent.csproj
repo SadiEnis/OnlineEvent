@@ -74,6 +74,7 @@
     <Content Include="CreateEvent.aspx" />
     <Content Include="EventDetail.aspx" />
     <Content Include="EventManage.aspx" />
+    <Content Include="Events.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Profiles\ComminityPage.aspx" />
     <Content Include="Profiles\Commity.aspx" />
@@ -93,6 +94,7 @@
     <Compile Include="CreateEvent.aspx.designer.cs">
       <DependentUpon>CreateEvent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="EventDetail.aspx.cs">
       <DependentUpon>EventDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +108,13 @@
     </Compile>
     <Compile Include="EventManage.aspx.designer.cs">
       <DependentUpon>EventManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>

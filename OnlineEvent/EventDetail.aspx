@@ -61,11 +61,16 @@
             padding: 10px;
         }
 
-        .followComm {
+        .ticketbuybtn {
             border: solid 2px;
             border-radius: 5px;
             background-color: white;
         }
+
+            .ticketbuybtn:hover {
+                background-color: #eeeeee;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
 
         .microNav {
             display: flex;
@@ -128,7 +133,6 @@
             z-index: 1000;
         }
 
-        /* Pop-up panel stili */
         .modal {
             display: none;
             position: fixed;
@@ -258,8 +262,9 @@
             <br />
             <asp:TextBox ID="txtEvent" runat="server" Placeholder="Etkinlik Adı"></asp:TextBox><br />
             <br />--%>
-            <asp:Label ID="Label1" runat="server" Text="Bu bilet ücretsizdir. Biletlerinize eklemek için ilgili butona tıklayınız."></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Bu bilet ücretsizdir. Biletlerinize eklemek için ilgili butona tıklayınız."></asp:Label><br />
             <br />
+            <asp:TextBox ID="txtName" runat="server" Placeholder="Kullanıcı Adı"></asp:TextBox><br />
             <br />
             <br />
             <asp:Button ID="btnSubmit" runat="server" Text="Bileti Al" CssClass="summit-button" />
@@ -294,7 +299,7 @@
                     <asp:ImageButton ID="ImageButton1" runat="server" Width="25px" CssClass="copybutton" Height="25px" ImageUrl="~/Assets/Media/share.png" OnClientClick="copyPageUrl(); return false;" />
                 </td>
                 <td class="auto-style14">
-                    <asp:Button ID="btnBuyTicket" runat="server" Height="50px" Text="Bilet Al" Width="150px" CssClass="followComm" OnClientClick="openModal(); return false;" />
+                    <asp:Button ID="btnBuyTicket" runat="server" Height="50px" Text="Bilet Al" Width="150px" CssClass="ticketbuybtn" OnClientClick="openModal(); return false;" />
                 </td>
             </tr>
             <tr>

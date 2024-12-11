@@ -117,7 +117,7 @@
             </tr>
             <tr>
                 <td class="auto-style21" colspan="2">
-                    <asp:Button ID="btnLogin" runat="server" Height="30px" Text="Giriş Yap" CssClass="login-btn" />
+                    <asp:Button ID="btnLogin" runat="server" Height="30px" Text="Giriş Yap" CssClass="login-btn" OnClick="btnLogin_Click" />
                 </td>
             </tr>
             <tr>
