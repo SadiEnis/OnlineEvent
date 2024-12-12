@@ -77,6 +77,7 @@
         .auto-style15 {
             text-align: right;
             height: 35px;
+            width: 162px;
         }
 
         .auto-style20 {
@@ -86,6 +87,9 @@
         }
         .auto-style21 {
             text-align: center;
+        }
+        .auto-style22 {
+            width: 162px;
         }
     </style>
 </asp:Content>
@@ -116,6 +120,11 @@
                 </td>
             </tr>
             <tr>
+                <td class="auto-style11" colspan="2">
+                    <asp:Label ID="lblException" runat="server" ForeColor="Red"></asp:Label>
+                </td>
+            </tr>
+            <tr>
                 <td class="auto-style21" colspan="2">
                     <asp:Button ID="btnLogin" runat="server" Height="30px" Text="Giriş Yap" CssClass="login-btn" OnClick="btnLogin_Click" />
                 </td>
@@ -128,7 +137,7 @@
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style22">&nbsp;</td>
             </tr>
         </table>
     </div>

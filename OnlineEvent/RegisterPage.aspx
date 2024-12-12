@@ -123,22 +123,32 @@
             </tr>
             <tr>
                 <td class="auto-style12" colspan="2">
-                    <asp:TextBox ID="txtMail" runat="server" CssClass="login-txt" placeholder="E-Posta"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server" CssClass="login-txt" placeholder="Kullanıcı Adı"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12" colspan="2">
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="E-Posta"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style11" colspan="2">
-                    <asp:TextBox ID="txtSifre" runat="server" CssClass="login-txt" placeholder="Şifre" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="login-txt" placeholder="Şifre" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style11" colspan="2">
-                    <asp:TextBox ID="txtSifreAgain" runat="server" CssClass="login-txt" placeholder="Şifre Tekrar" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPasswordAgain" runat="server" CssClass="login-txt" placeholder="Şifre Tekrar" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style15" colspan="2">
-                    <asp:Button ID="btnRegister" runat="server" Height="30px" Text="Kayıt Ol" CssClass="login-btn" />
+                    <asp:Label ID="lblException" runat="server" Font-Bold="True" Font-Underline="True" ForeColor="Red"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style15" colspan="2">
+                    <asp:Button ID="btnRegister" runat="server" Height="30px" Text="Kayıt Ol" CssClass="login-btn" OnClick="btnRegister_Click" />
                 </td>
             </tr>
             <tr>

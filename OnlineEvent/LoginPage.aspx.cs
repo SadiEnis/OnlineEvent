@@ -22,22 +22,29 @@ namespace OnlineEvent
         {
             email = txtEmail.Text;
             password = txtSifre.Text;
+
             using (SqlConnection conn = db.GetConnection())
             {
-                query = "SELECT COUNT(*) FROM Member.Admins WHERE Email = @Email AND Password = @Password";
+                try
+                {
+                    conn.Open();
 
-                SqlCommand loginCommand = new SqlCommand(query, conn);
-                loginCommand.Parameters.AddWithValue("@Email", email);
-                loginCommand.Parameters.AddWithValue("@Password", password);
+                    using (SqlCommand loginCommand = new SqlCommand("SP_CheckAdminLOgin", conn))
+                    {
+                        loginCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                        loginCommand.Parameters.AddWithValue("@Email", email);
+                        loginCommand.Parameters.AddWithValue("@Password", password);
 
-                conn.Open(); // bu işlem veri tabanında cursor ile de yapılabilir
-                // bu işlemler procedure haline getirilmeli
-                int userCount = (int)loginCommand.ExecuteScalar();
-
-                if (userCount > 0)
-                    btnLogin.BackColor = Color.Green;
-                else
-                    btnLogin.BackColor = Color.Red;
+                        if ((int)loginCommand.ExecuteScalar() == 1) 
+                            btnLogin.BackColor = Color.Green;
+                        else
+                            lblException.Text = "Kullanıcı adı veya şifre hatalı.";
+                    }
+                }
+                catch (Exception)
+                {
+                    lblException.Text = "Bir hata oluştu. Tekrar deneyiniz.";
+                }
             }
         }
     }

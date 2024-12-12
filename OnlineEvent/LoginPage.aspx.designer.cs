@@ -33,6 +33,15 @@ namespace OnlineEvent
         protected global::System.Web.UI.WebControls.TextBox txtSifre;
 
         /// <summary>
+        /// lblException control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblException;
+
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
