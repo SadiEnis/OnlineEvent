@@ -96,15 +96,6 @@ namespace OnlineEvent.Profiles
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// txtSurname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSurname;
-
-        /// <summary>
         /// txtMail control.
         /// </summary>
         /// <remarks>
@@ -114,13 +105,13 @@ namespace OnlineEvent.Profiles
         protected global::System.Web.UI.WebControls.TextBox txtMail;
 
         /// <summary>
-        /// txtMail0 control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMail0;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
         /// txtDesc control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CreateComminity.aspx.cs" Inherits="OnlineEvent.CreateComminity" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="CreateCommunity.aspx.cs" Inherits="OnlineEvent.CreateComminity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -25,6 +25,7 @@
         .auto-style12 {
             font-size: x-large;
             text-align: center;
+            height: 20px;
         }
 
         .login-txt {
@@ -93,12 +94,6 @@
             width: 155px;
         }
 
-        .auto-style23 {
-            text-align: center;
-            font-size: large;
-            height: 39px;
-        }
-
         .auto-style24 {
             text-align: left;
             font-size: large;
@@ -119,7 +114,7 @@
             </tr>
             <tr>
                 <td class="auto-style20" colspan="2">
-                    <strong>Yeni Etkinlik Oluştur</strong>
+                    <strong>Yeni Topluluk Oluştur</strong>
                 </td>
             </tr>
             <tr>
@@ -129,20 +124,29 @@
             </tr>
             <tr>
                 <td class="auto-style25" colspan="2">
-                    <asp:TextBox ID="txtName" runat="server" CssClass="login-txt" placeholder="Etkinlik Adı"></asp:TextBox>
+                    <asp:TextBox ID="txtName" runat="server" CssClass="login-txt" placeholder="Topluluk Adı"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style25" colspan="2">
-                    <asp:TextBox ID="txtDesc" runat="server" CssClass="login-txt" placeholder="Etkinlik Açıklaması" Height="150px" TextMode="MultiLine" Width="300px"></asp:TextBox>
+                    <asp:TextBox ID="txtComUsername" runat="server" CssClass="login-txt" placeholder="Topluluk Kullanıcı Adı"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style25" colspan="2">
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="Topluluk E-Mail"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style25" colspan="2">
+                    <asp:TextBox ID="txtDesc" runat="server" CssClass="login-txt" placeholder="Topluluk Açıklaması" Height="150px" TextMode="MultiLine" Width="300px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style25" colspan="2">
                     <div style="display: flex;">
-                        <asp:TextBox ID="txtPrice" runat="server" CssClass="txt" placeholder="Ücret"></asp:TextBox>
-                        <div style="height: 30px; width: 2px; background-color: black; margin-left: 5px; margin-right: 5px;"></div>
-                        <asp:TextBox ID="txtMaxMember" runat="server" CssClass="txt" placeholder="Katılımcı"></asp:TextBox>
+                        <asp:DropDownList ID="ddlCity" runat="server" Height="30px" Width="250px">
+                        </asp:DropDownList>
                     </div>
                 </td>
             </tr>
@@ -154,31 +158,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style24" colspan="2">Tarih</td>
-            </tr>
-            <tr>
-                <td class="auto-style23" colspan="2">
-                    <asp:DropDownList ID="ddlDay" runat="server" Height="25px" Width="50px">
-                    </asp:DropDownList>
-                    <strong>&nbsp;/</strong> <strong>
-                        <asp:DropDownList ID="ddlMonth" runat="server" Height="25px" Width="50px">
-                        </asp:DropDownList>
-                        &nbsp;/</strong>
-                    <asp:DropDownList ID="ddlYear" runat="server" Height="25px" Width="60px">
-                    </asp:DropDownList>
-                    &nbsp;&nbsp;
-                    <strong>
-                        <asp:DropDownList ID="ddlHour" runat="server" Height="25px" Width="50px">
-                        </asp:DropDownList>
-                        &nbsp;.
-                    <asp:DropDownList ID="ddlMinute" runat="server" Height="25px" Width="50px">
-                    </asp:DropDownList>
-                    </strong>
+                <td class="auto-style24" colspan="2">
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="login-txt" placeholder="Topluluk Şifresi" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style11" colspan="2">
-                    <asp:Label ID="lblException" runat="server" Font-Size="14pt" ForeColor="Red"></asp:Label>
+                    <asp:TextBox ID="txtPasswordAgain" runat="server" CssClass="login-txt" placeholder="Topluluk Şifresi" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -188,7 +174,7 @@
             </tr>
             <tr>
                 <td class="auto-style11" colspan="2">
-                    <asp:TextBox ID="txtPassword" runat="server" CssClass="login-txt" placeholder="Topluluk Şifresi" TextMode="Password"></asp:TextBox>
+                    <asp:Label ID="lblException" runat="server" Font-Size="14pt" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
             <tr>

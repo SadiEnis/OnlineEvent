@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +10,36 @@ namespace OnlineEvent.Profiles
 {
     public partial class ComminityPage : System.Web.UI.Page
     {
+        string communityId, query;
+        Database db;
         protected void Page_Load(object sender, EventArgs e)
         {
+            db = Database.GetInstance();
+            if (!IsPostBack)
+            {
+                communityId = Request.QueryString["request"];
+                query = $"SELECT * FROM view_CommunityWithManagerName where CommunityID = {communityId}";
 
+                using (SqlConnection con = db.GetConnection())
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.Read())
+                            {
+                                lblCommName.Text = dr["Name"].ToString();
+                                lblCity.Text = dr["City"].ToString();
+                                lblInfo.Text = dr["Info"].ToString() ;
+                                lblManager.Text = dr["Manager"].ToString();
+                                txtName.Text = dr["Name"].ToString();
+                                txtDesc.Text = dr["Info"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         protected void btnInfo_Click(object sender, EventArgs e)
@@ -35,7 +63,7 @@ namespace OnlineEvent.Profiles
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            if(pnlEditComm.Visible == false)
+            if (pnlEditComm.Visible == false)
             {
                 pnlEditComm.Visible = true;
             }

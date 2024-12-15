@@ -45,8 +45,14 @@ namespace OnlineEvent.User
         {
             if (pnlEditProfile.Visible)
                 pnlEditProfile.Visible = false;
-            else 
+            else
                 pnlEditProfile.Visible = true;
+        }
+
+        protected void btnCreateComunity_Click(object sender, EventArgs e)
+        {
+            userId = Request.QueryString["UserID"];
+            Response.Redirect($"/CreateCommunity.aspx?createdBy={userId}");
         }
     }
 }

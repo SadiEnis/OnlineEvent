@@ -269,6 +269,7 @@
                             <tr>
                                 <td class="auto-style21">&nbsp;</td>
                                 <td class="auto-style10" colspan="2">
+                                    <asp:Button ID="btnCreateComunity" runat="server" CssClass="btn-style" Text="Topluluk Oluştur" Height="40px" Width="120px" OnClick="btnCreateComunity_Click" />
                                     <asp:Button ID="btnEditProfile" runat="server" CssClass="btn-style" Text="Profili Düzenle" Height="40px" Width="120px" OnClick="btnEditProfile_Click" />
                                 </td>
                             </tr>

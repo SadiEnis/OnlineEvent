@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="OnlineEvent.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="LoginCommunity.aspx.cs" Inherits="OnlineEvent.LoginCommunity" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="style.css" rel="stylesheet" />
@@ -85,11 +85,13 @@
             height: 29px;
             text-align: center;
         }
+
         .auto-style21 {
             text-align: center;
         }
-        .auto-style23 {
-            width: 119px;
+
+        .auto-style22 {
+            width: 162px;
         }
     </style>
 </asp:Content>
@@ -97,12 +99,11 @@
     <div style="background-color: white;" class="login">
         <table class="login-table">
             <tr>
-                <td class="auto-style20" colspan="2">
-                    &nbsp;</td>
+                <td class="auto-style20" colspan="2">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style20" colspan="2">
-                    <strong>Giriş Yap</strong>
+                    <strong>Topluluk Giriş Yap</strong>
                 </td>
             </tr>
             <tr>
@@ -111,8 +112,9 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style12" colspan="2"><asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="E-Posta">murattasyurek38@example.com</asp:TextBox>
-                    </td>
+                <td class="auto-style12" colspan="2">
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="login-txt" placeholder="E-Posta">murattasyurek38@example.com</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style11" colspan="2">
@@ -130,15 +132,17 @@
                 </td>
             </tr>
             <tr>
-                <td style="text-align:left;" class="auto-style23">
-                    <a href="RegisterPage.aspx"><strong>Hesap Oluştur</strong></a></td>
+                <td style="text-align: left;">
+                    <a href="CreateCommunity.aspx"><strong>Hesap Oluştur</strong></a></td>
                 <td class="auto-style15">
                     <a href="#"><strong>Şifremi Unuttum</strong></a></td>
             </tr>
             <tr>
-                <td class="auto-style21" colspan="2"><a href="LoginCommunity.aspx"><strong>Topluluk Giriş Yap</strong></a></td>
+                <td>&nbsp;</td>
+                <td class="auto-style22">&nbsp;</td>
             </tr>
         </table>
     </div>
     <div style="height: 50px"></div>
 </asp:Content>
+
