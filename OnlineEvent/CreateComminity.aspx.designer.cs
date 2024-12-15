@@ -11,7 +11,7 @@ namespace OnlineEvent
 {
 
 
-    public partial class CreateEvent
+    public partial class CreateComminity
     {
 
         /// <summary>

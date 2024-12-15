@@ -29,14 +29,21 @@ namespace OnlineEvent
                 {
                     conn.Open();
 
-                    using (SqlCommand loginCommand = new SqlCommand("SP_CheckAdminLOgin", conn))
+                    using (SqlCommand loginCommand = new SqlCommand("SP_CheckUserLogin", conn))
                     {
                         loginCommand.CommandType = System.Data.CommandType.StoredProcedure;
                         loginCommand.Parameters.AddWithValue("@Email", email);
                         loginCommand.Parameters.AddWithValue("@Password", password);
 
-                        if ((int)loginCommand.ExecuteScalar() == 1) 
-                            btnLogin.BackColor = Color.Green;
+                        object result = loginCommand.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            int userId = Convert.ToInt32(result);
+                            Session["UserID"] = userId;
+                            string site = $"~/Profiles/UserProfile.aspx?UserID={userId}";
+                            Response.Redirect(site);
+                        }
                         else
                             lblException.Text = "Kullanıcı adı veya şifre hatalı.";
                     }

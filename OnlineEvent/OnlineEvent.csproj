@@ -71,6 +71,7 @@
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
     <Content Include="Assets\Media\share.png" />
+    <Content Include="CreateComminity.aspx" />
     <Content Include="CreateEvent.aspx" />
     <Content Include="EventDetail.aspx" />
     <Content Include="EventManage.aspx" />
@@ -87,6 +88,13 @@
     <Content Include="MainPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateComminity.aspx.cs">
+      <DependentUpon>CreateComminity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateComminity.aspx.designer.cs">
+      <DependentUpon>CreateComminity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateEvent.aspx.cs">
       <DependentUpon>CreateEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

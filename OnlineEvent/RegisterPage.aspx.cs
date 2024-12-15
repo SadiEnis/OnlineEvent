@@ -49,15 +49,6 @@ namespace OnlineEvent
                             cmd.Parameters.AddWithValue("@email", email);
                             cmd.Parameters.AddWithValue("@password", sifre);
 
-                            //// Procedure'den dönen isValid değerini tutmak için SqlParameter kullanıyoruz.
-                            //SqlParameter isValid = new SqlParameter("@isValid", System.Data.SqlDbType.Int)
-                            //{
-                            //    Direction = System.Data.ParameterDirection.Output
-                            //};
-                            //cmd.Parameters.Add(isValid);
-
-                            //cmd.ExecuteNonQuery();
-
                             int isValid = (int)cmd.ExecuteScalar();
 
                             if (isValid == 1)

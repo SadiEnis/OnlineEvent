@@ -243,14 +243,12 @@
                                     <asp:Image ID="Image1" runat="server" CssClass="center-img" Height="100px" ImageUrl="~/Assets/Media/42-photo11.jpg" Width="100px" />
                                 </td>
                                 <td>
-                                    <asp:Label ID="Label1" runat="server" Text="Sadi Enis Güçlüer" CssClass="label-style"></asp:Label>
+                                    <asp:Label ID="lblName" runat="server" CssClass="label-style"></asp:Label>
+                                    &nbsp;<asp:Label ID="lblSurname" runat="server" CssClass="label-style"></asp:Label>
                                     &nbsp;|&nbsp;
-                    <asp:Label ID="Label2" runat="server" Text="@sadienis" CssClass="label-style"></asp:Label>
+                    <asp:Label ID="lblUsername" runat="server" CssClass="label-style"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label3" runat="server" Text="Kayseri" CssClass="label-style"></asp:Label>
-                                    &nbsp;|&nbsp;
-                    <asp:Label ID="Label4" runat="server" Text="Kasım2022" CssClass="label-style"></asp:Label>
                                 </td>
                                 <td class="auto-style9"></td>
                             </tr>
@@ -328,14 +326,14 @@
                                 <tr>
                                     <td class="auto-style49">&nbsp;</td>
                                     <td class="auto-style55" colspan="2">E-Posta:
-                                        <asp:TextBox ID="txtMail" runat="server" Height="25px" Width="500px"></asp:TextBox>
+                                        <asp:TextBox ID="txtEmail" runat="server" Height="25px" Width="500px" Enabled="False"></asp:TextBox>
                                     </td>
                                     <td class="auto-style62">&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td class="auto-style49"></td>
                                     <td class="auto-style55" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp; Şifre:
-                                        <asp:TextBox ID="txtMail0" runat="server" Height="25px" Width="500px"></asp:TextBox>
+                                        <asp:TextBox ID="txtPassword" runat="server" Height="25px" Width="500px" TextMode="Password"></asp:TextBox>
                                     </td>
                                     <td class="auto-style62"></td>
                                 </tr>
