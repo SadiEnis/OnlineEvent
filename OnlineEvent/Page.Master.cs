@@ -33,5 +33,9 @@ namespace OnlineEvent
 
         }
 
+        protected void btnEvents_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Events.aspx");
+        }
     }
 }

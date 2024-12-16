@@ -200,7 +200,7 @@
 
         .auto-style20 {
             text-align: center;
-            font-size: x-large;
+            font-size: 22px;
         }
 
         .auto-style21 {
@@ -227,6 +227,9 @@
             width: 150px;
             height: 23px;
         }
+        .auto-style26 {
+            font-size: large;
+        }
     </style>
 </asp:Content>
 
@@ -244,7 +247,7 @@
             <br />--%>
             <asp:Label ID="Label1" runat="server" Text="Bu bilet ücretsizdir. Biletlerinize eklemek için ilgili butona tıklayınız."></asp:Label><br />
             <br />
-            <asp:TextBox ID="txtName" runat="server" Placeholder="Kullanıcı Adı"></asp:TextBox><br />
+            <asp:TextBox ID="txtUsername" runat="server" Placeholder="Kullanıcı Adı"></asp:TextBox><br />
             <br />
             <br />
             <asp:Button ID="btnSubmit" runat="server" Text="Bileti Al" CssClass="summit-button" />
@@ -268,6 +271,8 @@
                     <asp:Image ID="imgEvent" runat="server" CssClass="imgComm" Height="150px" ImageUrl="~/Assets/Media/42-photo11.jpg" Width="150px" />
                 </td>
                 <td class="auto-style10"><strong>
+                    <asp:Label ID="lblComName" runat="server" CssClass="auto-style9" Text="TOPLULUK ADI" EnableTheming="True"></asp:Label>
+                    <br />
                     <asp:Label ID="lblEventName" runat="server" CssClass="auto-style9" Text="ETKİNLİK ADI"></asp:Label>
                     <br />
                 </strong>
@@ -321,7 +326,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style20">
-                        <strong>Yönetici<strong>Yönetici</strong>
+                        <strong><span class="auto-style26">Topluluk Yöneticisi</span></strong>
                             <hr /></td>
                 </tr>
                 <tr>

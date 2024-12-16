@@ -58,7 +58,7 @@
                                         <asp:Button ID="btnMainPage" runat="server" Text="Ana Sayfa" CssClass="nav-button" OnClick="btnMainPage_Click" />
                                     </td>
                                     <td class="auto-style7">
-                                        <asp:Button ID="btnEvents" runat="server" Text="Etkinlikler" CssClass="nav-button" />
+                                        <asp:Button ID="btnEvents" runat="server" Text="Etkinlikler" CssClass="nav-button" OnClick="btnEvents_Click" />
                                     <td class="auto-style7">
                                         <asp:Button ID="btnComminity" runat="server" Text="Topluluklar" CssClass="nav-button" />
 

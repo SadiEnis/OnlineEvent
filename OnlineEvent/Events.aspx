@@ -29,39 +29,43 @@
         .label {
             font-size: 18px;
         }
-
-        </style>
-    <script>
-
-</script>
+        a {
+            color: black
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="filter">
     </div>
     <div class="events">
-        <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="10">
+        <asp:DataList ID="DataList" runat="server" RepeatColumns="5" RepeatDirection="Horizontal" CellPadding="10" >
             <ItemTemplate>
                 <div class="event">
-                    <asp:Image ID="imgEvent" runat="server" Width="200" ImageUrl="~/Assets/Media/42-photo11.jpg" />
-                    <asp:Label ID="lblEventName" runat="server" Text="Etkinik Adı" CssClass="label"></asp:Label>
-                    <div class="hidden-content">
-                        23-12-2024
-                    </div>
+                    <a href="EventDetail.aspx?request=<%# Eval("EventID") %>">
+                        <asp:Image ID="imgEvent" runat="server" Width="200" ImageUrl="~/Assets/Media/42-photo11.jpg" />
+                        <asp:Label ID="lblEventName" runat="server" Text='<%# Eval("EventName") %>' CssClass="label"></asp:Label>
+                        <div class="hidden-content">
+                            <asp:Label ID="lblCommunity" runat="server" Text='<%# Eval("CommunityName") %>'></asp:Label>
+                            <asp:Label ID="lblDate" runat="server" Text='<%# Eval("EventDate") %>'></asp:Label>
+                        </div>
+                    </a>
                 </div>
             </ItemTemplate>
         </asp:DataList>
 
-
-        <br />
+       <%-- <br />
         <br />
         <div class="event">
-            <asp:Image ID="imgEvent" runat="server" Width="200" ImageUrl="~/Assets/Media/42-photo11.jpg" />
-            <asp:Label ID="lblEventName" runat="server" Text="Etkinik Adı" CssClass="label"></asp:Label>
-            <div class="hidden-content">
-                23-12-2024
-            </div>
-        </div>
+            <a href="#">
+                <asp:Image ID="imgEvent" runat="server" Width="200" ImageUrl="~/Assets/Media/42-photo11.jpg" />
+                <asp:Label ID="lblEventName" runat="server" Text="Etkinik Adı" CssClass="label"></asp:Label>
+                <div class="hidden-content">
+                    <asp:Label ID="lblCommunityName" runat="server" Text="KAYU Bilişim Kulübü"></asp:Label>
+                    <asp:Label ID="lblEventDate" runat="server" Text="24.12.2024"></asp:Label>
+                </div>
+            </a>
+        </div>--%>
 
     </div>
 </asp:Content>

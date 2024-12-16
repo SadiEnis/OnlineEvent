@@ -71,48 +71,57 @@ namespace OnlineEvent
             price = txtPrice.Text;
             attendees = txtMaxMember.Text;
             password = txtPassword.Text;
-            password = ConvertSHA256(password); // doğru çalışmıyor procedure haline getir...
+
             using (SqlConnection conn = db.GetConnection())
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Member.Communities WHERE CommunityID = {comminityId}"))
+
+                using (SqlCommand cmd = new SqlCommand("SP_HashedPassword", conn))
                 {
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        // C# ile SHA dönüşümü yapıp kontrol edilmeli
-                        dbPassword = dr["Password"].ToString();
-                    }
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    password = cmd.ExecuteScalar().ToString();
+                }
+
+                using (SqlCommand cmd = new SqlCommand($"SELECT Password FROM Member.Communities WHERE CommunityID = {comminityId}", conn))
+                {
+                    dbPassword = cmd.ExecuteScalar().ToString();
                 }
             }
-
-            if (date < DateTime.Now)
-                lblException.Text = "Tarih geçerli değil. Farklı bir tarih deneyiniz.";
-            else
+            if (password == dbPassword)
             {
-                using (SqlConnection con = db.GetConnection())
+                if (date < DateTime.Now)
+                    lblException.Text = "Tarih geçerli değil. Farklı bir tarih deneyiniz.";
+                else
                 {
-                    con.Open();
-
-                    using (SqlCommand cmd = new SqlCommand("SP_CreateEvent", con))
+                    using (SqlConnection con = db.GetConnection())
                     {
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@name", name);
-                        cmd.Parameters.AddWithValue("@description", description);
-                        cmd.Parameters.AddWithValue("@comminity", comminityId);
-                        cmd.Parameters.AddWithValue("@eventdate", date);
-                        cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@attendees", attendees);
+                        con.Open();
 
-                        int isValid = (int)cmd.ExecuteScalar();
-                        if (isValid == 1)
-                            btnSave.BackColor = Color.Red;
-                        else
+                        using (SqlCommand cmd = new SqlCommand("SP_CreateEvent", con))
                         {
-                            lblException.Text = "Bir hata oluştu ve etkinlik oluşturulamadı.";
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@name", name);
+                            cmd.Parameters.AddWithValue("@description", description);
+                            cmd.Parameters.AddWithValue("@comminity", comminityId);
+                            cmd.Parameters.AddWithValue("@eventdate", date);
+                            cmd.Parameters.AddWithValue("@price", price);
+                            cmd.Parameters.AddWithValue("@attendees", attendees);
+
+                            int isValid = (int)cmd.ExecuteScalar();
+                            if (isValid == 1)
+                                btnSave.BackColor = Color.Red;
+                            else
+                            {
+                                lblException.Text = "Bir hata oluştu ve etkinlik oluşturulamadı.";
+                            }
                         }
                     }
                 }
             }
+            else
+                lblException.Text = "Şifre hatalı";
         }
 
         DateTime StringToDatetime(string day, string month, string year, string hour, string minute)

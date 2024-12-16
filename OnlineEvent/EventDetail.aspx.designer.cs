@@ -24,13 +24,13 @@ namespace OnlineEvent
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// txtName control.
+        /// txtUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox txtUsername;
 
         /// <summary>
         /// btnSubmit control.
@@ -49,6 +49,15 @@ namespace OnlineEvent
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgEvent;
+
+        /// <summary>
+        /// lblComName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblComName;
 
         /// <summary>
         /// lblEventName control.
