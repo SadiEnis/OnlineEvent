@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -10,7 +12,7 @@ namespace OnlineEvent
 {
     public partial class CreateEvent : System.Web.UI.Page
     {
-        string name, description, pasword, attendees, price;
+        string name, description, password, dbPassword, attendees, price;
         int comminityId;
         DateTime date;
         Database db;
@@ -59,7 +61,7 @@ namespace OnlineEvent
         {
             name = txtName.Text;
             description = txtDesc.Text;
-            comminityId = 1; // Diğer sayfadan buraya geçerken bu değer tanımlanacak.
+            comminityId = int.Parse(Request.QueryString["request"]); // Diğer sayfadan buraya geçerken bu değer tanımlanacak.
             date = StringToDatetime(
                 ddlDay.SelectedItem.ToString(),
                 ddlMonth.SelectedItem.ToString(),
@@ -68,6 +70,20 @@ namespace OnlineEvent
                 ddlMinute.SelectedItem.ToString());
             price = txtPrice.Text;
             attendees = txtMaxMember.Text;
+            password = txtPassword.Text;
+            password = ConvertSHA256(password); // doğru çalışmıyor procedure haline getir...
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand($"SELECT * FROM Member.Communities WHERE CommunityID = {comminityId}"))
+                {
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        // C# ile SHA dönüşümü yapıp kontrol edilmeli
+                        dbPassword = dr["Password"].ToString();
+                    }
+                }
+            }
 
             if (date < DateTime.Now)
                 lblException.Text = "Tarih geçerli değil. Farklı bir tarih deneyiniz.";
@@ -106,6 +122,21 @@ namespace OnlineEvent
             DateTime dateTime = Convert.ToDateTime(dateString);
 
             return dateTime;
+        }
+
+        string ConvertSHA256(string data)
+        {
+            using (SHA256 sha = SHA256.Create())
+            {
+                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(data));
+
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }

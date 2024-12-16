@@ -234,7 +234,7 @@
                 </td>
                 <td class="auto-style14">
                     <asp:Button ID="btnEdit" runat="server" Height="50px" Text="Topluluğu Düzenle" Width="150px" CssClass="followComm" OnClick="btnEdit_Click" />
-                    <asp:Button ID="btnCreateEvent" runat="server" CssClass="btn-createvent" Text="Etkinlik Oluştur" />
+                    <asp:Button ID="btnCreateEvent" runat="server" CssClass="btn-createvent" Text="Etkinlik Oluştur" OnClick="btnCreateEvent_Click" />
                 </td>
             </tr>
             <tr>

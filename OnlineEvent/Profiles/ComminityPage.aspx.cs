@@ -73,6 +73,14 @@ namespace OnlineEvent.Profiles
             }
         }
 
+        protected void btnCreateEvent_Click(object sender, EventArgs e)
+        {
+            communityId = Request.QueryString["request"];
+            Session["UserID"] = communityId;
+            string site = $"~/CreateEvent.aspx?request={communityId}";
+            Response.Redirect(site);
+        }
+
         protected void txtDesc_TextChanged(object sender, EventArgs e)
         {
 
