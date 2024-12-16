@@ -82,6 +82,7 @@
     <Content Include="Profiles\Commity.aspx" />
     <Content Include="Profiles\Profile.aspx" />
     <Content Include="RegisterPage.aspx" />
+    <Content Include="script.js" />
     <Content Include="style.css" />
     <Content Include="Profiles\UserProfile.aspx" />
     <Content Include="test.aspx" />

@@ -1,18 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="ComminityPage.aspx.cs" Inherits="OnlineEvent.Profiles.ComminityPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script>
-        function copyPageUrl() {
-            const pageUrl = window.location.href;
-            navigator.clipboard.writeText(pageUrl)
-                .then(() => {
-                    alert("Sayfanın linki kopyalandı: " + pageUrl);
-                })
-                .catch(err => {
-                    console.error("Link kopyalanamadı: ", err);
-                });
-        }
-    </script>
+    <script src="../script.js"></script>
 
     <style type="text/css">
         .container {
