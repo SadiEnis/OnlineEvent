@@ -183,11 +183,7 @@
             width: 508px;
             height: 23px;
         }
-        .auto-style29 {
-            text-align: center;
-            height: 23px;
-        }
-    </style>
+        </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -239,6 +235,7 @@
                 <td class="auto-style25"></td>
             </tr>
         </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <asp:Panel ID="pnlEditComm" runat="server" Visible="False">
         <div class="editcomm-style">
@@ -312,18 +309,34 @@
             <asp:Panel ID="panelInfo" runat="server">
                 <strong><span class="auto-style21">Hakkında </span></strong>
                 <br />
+                <br />
+                <br />
                 <asp:Label ID="lblInfo" runat="server" Text="Topluluğun hakkında yazısı" CssClass="auto-style19"></asp:Label>
             </asp:Panel>
             <asp:Panel ID="panelEvents" runat="server" Visible="False">
                 <strong><span class="auto-style21">Etkinlikler </span></strong>
                 <div style="margin: 50px">
-                    <asp:GridView ID="gridEvents" runat="server" Width="460px"></asp:GridView>
+                    <asp:GridView ID="gridEvents" runat="server" Width="750px" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" OnRowCommand="gridEvents_RowCommand">
+                        <AlternatingRowStyle BackColor="#DCDCDC" />
+                        <Columns>
+                            <asp:ButtonField ButtonType="Button" CommandName="SelectRow" HeaderText="Detay" ShowHeader="True" Text="Düzenle" />
+                        </Columns>
+                        <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                        <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                        <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#0000A9" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#000065" />
+                    </asp:GridView>
                 </div>
             </asp:Panel>
             <asp:Panel ID="panelMembers" runat="server" Visible="False">
                 <strong><span class="auto-style21">Üyeler </span></strong>
                 <div style="margin: 50px">
-                    <asp:GridView ID="gridMembers" runat="server" Width="460px"></asp:GridView>
+                    <asp:GridView ID="gridMembers" runat="server" Width="460px" OnSelectedIndexChanged="gridMembers_SelectedIndexChanged"></asp:GridView>
                 </div>
             </asp:Panel>
         </div>

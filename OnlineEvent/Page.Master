@@ -4,7 +4,8 @@
 
 <html>
 <head runat="server">
-    <title>TEST SİTE</title>
+    <title>onlinevent.com</title>
+    <link rel="icon" type="image/x-icon" href="Assets/Media/oe.png">
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     <link href="style.css" rel="stylesheet" />
     <style>
@@ -36,6 +37,9 @@
         .auto-style7 {
             width: 140px;
         }
+        .auto-style8 {
+            width: 100px;
+        }
     </style>
 </head>
 <body style="width: 1201px">
@@ -45,10 +49,9 @@
                 <table class="auto-style1">
                     <tr style="height: 50px">
                         <td class="auto-style4">
-                            <div style="background-color: antiquewhite; text-align: center; width: 100px; margin: auto;">
-                                <a href="MainPage.aspx">
-                                    <asp:Label Text="TEST-SİTE" runat="server" />
-                                </a>
+                            <div style="text-align: center; margin: auto;" class="auto-style8">
+                                <asp:Image ID="imgMiniIcon" runat="server" Height="16px" ImageUrl="~/Assets/Media/oe.png" Width="16px" />
+                                <asp:ImageButton ID="imgLogo" runat="server" Height="45px" ImageUrl="~/Assets/Media/onlineevent-logo.png" Width="80px" />
                             </div>
                         </td>
                         <td class="auto-style5">

@@ -248,9 +248,10 @@
             <asp:Label ID="Label1" runat="server" Text="Bu bilet ücretsizdir. Biletlerinize eklemek için ilgili butona tıklayınız."></asp:Label><br />
             <br />
             <asp:TextBox ID="txtUsername" runat="server" Placeholder="Kullanıcı Adı"></asp:TextBox><br />
+            <br /><asp:Label ID="lblException" runat="server" Text="" ForeColor="Red"></asp:Label>
             <br />
-            <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Bileti Al" CssClass="summit-button" />
+            
+            <asp:Button ID="btnSubmit" runat="server" Text="Bileti Al" CssClass="summit-button" OnClick="btnSubmit_Click" />
             <button type="button" onclick="closeModal()" class="close-button">Kapat</button>
         </div>
         <table class="auto-style1">

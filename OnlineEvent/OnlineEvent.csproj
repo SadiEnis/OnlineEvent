@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Media\42-photo11.jpg" />
+    <Content Include="Assets\Media\oe.png" />
+    <Content Include="Assets\Media\onlineevent-logo.png" />
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
     <Content Include="Assets\Media\share.png" />

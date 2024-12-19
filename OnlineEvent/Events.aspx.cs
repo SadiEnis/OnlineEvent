@@ -14,7 +14,6 @@ namespace OnlineEvent
         protected void Page_Load(object sender, EventArgs e)
         {
             db = Database.GetInstance();
-            Page.Title = "Etkinlikler";
             using (SqlConnection con = db.GetConnection())
             {
                 con.Open();

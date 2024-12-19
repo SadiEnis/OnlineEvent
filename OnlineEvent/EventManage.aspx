@@ -182,6 +182,9 @@
             width: 150px;
             height: 23px;
         }
+        .auto-style26 {
+            width: 508px;
+        }
     </style>
 </asp:Content>
 
@@ -240,57 +243,39 @@
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style48">&nbsp;</td>
-                        <td class="auto-style18">&nbsp;</td>
-                        <td class="auto-style18">&nbsp;</td>
+                        <td class="auto-style26">&nbsp;</td>
                         <td class="auto-style60">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style56"></td>
-                        <td class="auto-style18">İsim:
-                        <asp:TextBox ID="txtName" runat="server" Height="25px" Width="300px"></asp:TextBox>
-                        </td>
-                        <td class="auto-style18">Soyisim:
-                        <asp:TextBox ID="txtSurname" runat="server" Height="25px" Width="300px"></asp:TextBox>
+                        <td class="auto-style26">İsim:
+                        <asp:TextBox ID="txtName" runat="server" Height="25px" Width="450px"></asp:TextBox>
                         </td>
                         <td class="auto-style61"></td>
                     </tr>
                     <tr>
                         <td class="auto-style49">&nbsp;</td>
-                        <td class="auto-style18" colspan="2">E-Posta:
-                        <asp:TextBox ID="txtMail" runat="server" Height="25px" Width="500px"></asp:TextBox>
-                        </td>
-                        <td class="auto-style62">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style49"></td>
-                        <td class="auto-style18" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp; Şifre:
-                        <asp:TextBox ID="txtPass" runat="server" Height="25px" Width="500px"></asp:TextBox>
-                        </td>
-                        <td class="auto-style62"></td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style49">&nbsp;</td>
-                        <td class="auto-style18" colspan="2">Açıklama:<br /> &nbsp;<asp:TextBox ID="txtDesc" runat="server" Height="100px" TextMode="MultiLine" Width="500px"></asp:TextBox>
+                        <td>Açıklama:<br /> &nbsp;<asp:TextBox ID="txtDesc" runat="server" Height="100px" TextMode="MultiLine" Width="500px"></asp:TextBox>
                         </td>
                         <td class="auto-style62">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style49">&nbsp;</td>
-                        <td class="auto-style18" colspan="2">
+                        <td>
                             <asp:Button ID="btnSave" runat="server" CssClass="btn-style" Height="30px" Text="Kaydet" Width="100px" />
                         </td>
                         <td class="auto-style62">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style49">&nbsp;</td>
-                        <td class="auto-style18" colspan="2">Resim:<asp:FileUpload ID="FileUpload1" runat="server" Height="30px" Width="500px" />
+                        <td>Resim:<asp:FileUpload ID="FileUpload1" runat="server" Height="30px" Width="500px" />
                             <asp:Button ID="btnSaveImage" runat="server" CssClass="btn-style" Height="30px" Text="Yeni Resmi Kaydet" Width="150px" />
                         </td>
                         <td class="auto-style62">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style49">&nbsp;</td>
-                        <td class="auto-style18" colspan="2">&nbsp;</td>
+                        <td>&nbsp;</td>
                         <td class="auto-style62">&nbsp;</td>
                     </tr>
                 </table>

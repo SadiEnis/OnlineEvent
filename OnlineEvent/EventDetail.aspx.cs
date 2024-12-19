@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace OnlineEvent
 {
     public partial class EventDetail : System.Web.UI.Page
     {
         Database db = Database.GetInstance();
-        string request, comId;
+        string request, comId, eventId;
         protected void Page_Load(object sender, EventArgs e)
         {
             //lblAttender - bunun için sales yapılmalı
@@ -31,6 +26,7 @@ namespace OnlineEvent
                     {
                         if (dr.Read())
                         {
+                            eventId = dr["EventID"].ToString();
                             lblEventName.Text = dr["EventName"].ToString();
                             lblInfo.Text = dr["Info"].ToString();
                             lblComName.Text = dr["CommunityName"].ToString();
@@ -55,6 +51,36 @@ namespace OnlineEvent
         {
             panelAttendee.Visible = false;
             panelInfo.Visible = true;
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string username;
+            string userId = "";
+            using (SqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+                if (txtUsername.Text == "")
+                    lblException.Text = "Kullanıcı adını giriniz.";
+                else
+                {
+                    username = txtUsername.Text;
+                    using (SqlCommand cmd = new SqlCommand($"SELECT 1 FROM Member.Users U WHERE U.Username != '{username}'", conn))
+                    {
+                        if (cmd.ExecuteScalar().ToString() == "1")
+                        {
+                            using (SqlCommand cmdId = new SqlCommand($"SELECT U.UserID FROM Member.Users U WHERE U.Username = '{username}'", conn))
+                            {
+                                userId = cmdId.ExecuteScalar().ToString();
+                            }
+                        }
+                        else
+                            lblException.Text = "Kullanıcı adı bulunamadı.";
+                    }
+                    SqlCommand cmdInsert = new SqlCommand($"INSERT INTO EventSystem.Sales (UserID, EventID) VALUES ({userId}, {eventId})",conn);
+                    cmdInsert.ExecuteNonQuery();
+                }
+            }
         }
 
         protected void btnAttendee_Click(object sender, EventArgs e)
