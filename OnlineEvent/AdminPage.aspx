@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="OnlineEvent.AdminPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="OnlineEvent.AdminPage" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -23,13 +23,13 @@
             </nav>
             <div class="content">
                 <asp:Panel ID="pnlMessages" runat="server">
-                    <asp:DataList ID="datalistMessages" runat="server">
+                    <asp:DataList ID="datalistMessages" runat="server" OnItemCommand="datalistMessages_ItemCommand">
                         <ItemTemplate>
                             <asp:TextBox ID="txtMessage" runat="server" Height="120px" TextMode="MultiLine" Width="500px" Enabled="False" Text='<%# Eval("Content") %>'></asp:TextBox><br />
                             <br />
                             <asp:TextBox ID="txtAdminNote" runat="server" Height="120px" TextMode="MultiLine" Width="500px" Text='<%# Eval("AdminNote") %>'></asp:TextBox><br />
                             <br />
-                            <asp:Button ID="btnSend" runat="server" Text="Gönder" Height="30px" OnClick="btnSend_Click" Width="70px" CommandArgument='<%# Eval("FeedbackID") %>' OnCommand="btnSend_Command" />
+                            <asp:Button ID="btnSend" runat="server" Text="Gönder" Height="30px" Width="70px"  CommandName="Send" CommandArgument='<%# Eval("FeedbackId") %>' />
                             <br />
                             <br />
                             <hr />

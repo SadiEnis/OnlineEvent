@@ -10,35 +10,51 @@ namespace OnlineEvent
     public partial class AdminPage : System.Web.UI.Page
     {
         Database db;
-        string request, feedbackId;
+        string request;
+        int feedbackId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            db = Database.GetInstance();
-            request = "1";
-
-            using (SqlConnection con = db.GetConnection())
+                db = Database.GetInstance();
+            if (!IsPostBack)
             {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM FeedbackMessages", con))
-                {
-                    SqlDataReader dr = cmd.ExecuteReader();
+                request = "1";
 
-                    datalistMessages.DataSource = dr;
-                    datalistMessages.DataBind();
+                using (SqlConnection con = db.GetConnection())
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM FeedbackMessages", con))
+                    {
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        datalistMessages.DataSource = dr;
+                        datalistMessages.DataBind();
+                    }
                 }
             }
         }
-
-        protected void btnSend_Click(object sender, EventArgs e)
+        protected void datalistMessages_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            string a = feedbackId;
-        }
-
-        protected void btnSend_Command(object sender, CommandEventArgs e)
-        {
-            if (!IsPostBack)
+            if (e.CommandName == "Send")
             {
-                feedbackId = e.CommandArgument.ToString();
+                int feedbackId = Convert.ToInt32(e.CommandArgument);
+
+                TextBox txtAdminNote = (TextBox)e.Item.FindControl("txtAdminNote");
+                if (txtAdminNote != null)
+                {
+                    string adminNote = txtAdminNote.Text;
+
+                    using (SqlConnection con = db.GetConnection())
+                    {
+                        con.Open();
+                        string query = "UPDATE FeedbackMessages SET IsReviewed = 1, ReviewedAt = CONVERT(varchar(50), GETDATE(), 120), AdminNote = @AdminNote WHERE FeedbackId = @FeedbackId";
+                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        {
+                            cmd.Parameters.AddWithValue("@AdminNote", adminNote);
+                            cmd.Parameters.AddWithValue("@FeedbackId", feedbackId);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
             }
         }
     }
