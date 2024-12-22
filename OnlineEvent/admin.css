@@ -1,0 +1,52 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #e4e4e4;
+}
+
+.container {
+    display: flex;
+}
+
+.navbar {
+    width: 200px;
+    height: 100%;
+    background-color: #f44336;
+    color: white;
+    position: fixed;
+    margin: 10px;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.custom-button {
+    background-color: white;
+    color: black;
+    border: solid 2px black;
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+    .custom-button:hover {
+        transform: translateX(10px); /* Sağa doğru hareket */
+        background-color: lightskyblue; /* Hover sırasında arka plan değişikliği */
+    }
+
+.content {
+    margin-left: 250px;
+}

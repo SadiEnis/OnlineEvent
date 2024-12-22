@@ -76,6 +76,7 @@
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
     <Content Include="Assets\Media\share.png" />
+    <Content Include="Assets\Media\onlinevent.comAdminBanner.png" />
     <Content Include="Communities.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CreateCommunity.aspx" />
