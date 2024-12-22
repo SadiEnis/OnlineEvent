@@ -37,5 +37,15 @@ namespace OnlineEvent
         {
             Response.Redirect("/Events.aspx");
         }
+        protected void btnComminity_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Communities.aspx");
+        }
+
+        protected void btnFeedback_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Contact.aspx");
+        }
+
     }
 }

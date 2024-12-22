@@ -166,7 +166,7 @@
                     <asp:ImageButton ID="ImageButton1" runat="server" Width="25px" CssClass="copybutton" Height="25px" ImageUrl="~/Assets/Media/share.png" OnClientClick="copyPageUrl(); return false;" />
                 </td>
                 <td class="auto-style14">
-                    <asp:Button ID="btnFollow" runat="server" Height="50px" Text="Topluluğu Takip Et" Width="150px" CssClass="followComm" />
+                    <asp:Button ID="btnFollow" runat="server" Height="50px" Text="Topluluğu Takip Et" Width="150px" CssClass="followComm" OnClick="btnFollow_Click" />
                 </td>
             </tr>
             <tr>

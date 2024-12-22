@@ -263,7 +263,7 @@
                     <tr>
                         <td class="auto-style49"></td>
                         <td class="auto-style18">&nbsp;&nbsp;&nbsp;&nbsp; Şifre:
-                        <asp:TextBox ID="txtPassword" runat="server" Height="25px" Width="500px"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" Height="25px" Width="500px" TextMode="Password"></asp:TextBox>
                         </td>
                         <td class="auto-style62"></td>
                     </tr>

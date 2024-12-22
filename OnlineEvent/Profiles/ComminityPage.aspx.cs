@@ -43,9 +43,20 @@ namespace OnlineEvent.Profiles
                     }
                     using (SqlCommand cmd = new SqlCommand($"SELECT e.EventID AS [EtkinlikNumarasi], e.EventName AS [Etkinlik Adı], E.EventDate AS [Etkinlik Tarihi], E.TicketPrice AS [Katılım Ücreti] \r\nFROM EventSystem.Events E WHERE e.CommunityID = {communityId};", con))
                     {
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        gridEvents.DataSource = dr;
-                        gridEvents.DataBind();
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            gridEvents.DataSource = dr;
+                            gridEvents.DataBind();
+                        }
+                    }
+                    using (SqlCommand cmd1 = new SqlCommand($"SELECT * FROM Member.Communities where CommunityID = {communityId}", con))
+                    {
+                        SqlDataReader dr = cmd1.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            txtMail.Text = dr["Email"].ToString();
+                            txtPassword.Text = "***";
+                        }
                     }
                 }
             }

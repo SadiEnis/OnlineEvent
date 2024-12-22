@@ -16,14 +16,14 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
-            display: none; /* Başlangıçta gizlenir */
+            display: none;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
 
         .event:hover .hidden-content {
-            display: flex; /* Hover ile görünür hale gelir */
+            display: flex;
         }
 
         .label {

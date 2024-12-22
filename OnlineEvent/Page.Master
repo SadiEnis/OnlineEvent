@@ -63,11 +63,11 @@
                                     <td class="auto-style7">
                                         <asp:Button ID="btnEvents" runat="server" Text="Etkinlikler" CssClass="nav-button" OnClick="btnEvents_Click" />
                                     <td class="auto-style7">
-                                        <asp:Button ID="btnComminity" runat="server" Text="Topluluklar" CssClass="nav-button" />
+                                        <asp:Button ID="btnComminity" runat="server" Text="Topluluklar" CssClass="nav-button" OnClick="btnComminity_Click" />
 
                                     </td>
                                     <td>
-                                        <asp:Button ID="btn" runat="server" Text="Button" CssClass="nav-button" />
+                                        <asp:Button ID="btnFeedback" runat="server" Text="İletişim" CssClass="nav-button" OnClick="btnFeedback_Click" />
 
                                     </td>
                                 </tr>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <footer class="footer">
-            <asp:Label Text="TEST-SİTE" runat="server"/>
+            <asp:Label Text="ONLINE EVENT" runat="server"/>
             <hr style="width: 1000px; color: gold;" />
             <p>
                 Sadi Enis Güçlüer

@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace OnlineEvent
+{
+    public partial class Communities : System.Web.UI.Page
+    {
+        Database db;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            db = Database.GetInstance();
+            using (SqlConnection con = db.GetConnection())
+            {
+                con.Open();
+                using (SqlCommand cmdEvents = new SqlCommand("SELECT * FROM Member.Communities", con))
+                {
+                    SqlDataReader dr = cmdEvents.ExecuteReader();
+                    DataList.DataSource = dr;
+                    DataList.DataBind();
+                }
+            }
+        }
+    }
+}

@@ -67,12 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin.css" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="AdminPage.aspx" />
     <Content Include="Assets\Media\42-photo11.jpg" />
     <Content Include="Assets\Media\oe.png" />
     <Content Include="Assets\Media\onlineevent-logo.png" />
     <Content Include="Assets\Media\search-gold.png" />
     <Content Include="Assets\Media\search.png" />
     <Content Include="Assets\Media\share.png" />
+    <Content Include="Communities.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="CreateCommunity.aspx" />
     <Content Include="CreateEvent.aspx" />
     <Content Include="EventDetail.aspx" />
@@ -92,6 +97,34 @@
     <Content Include="MainPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.aspx.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage.aspx.designer.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Communities.aspx.cs">
+      <DependentUpon>Communities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Communities.aspx.designer.cs">
+      <DependentUpon>Communities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateCommunity.aspx.cs">
       <DependentUpon>CreateCommunity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
