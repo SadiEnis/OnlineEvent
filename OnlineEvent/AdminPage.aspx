@@ -6,11 +6,81 @@
 <head runat="server">
     <title>onlinevent.com::admin</title>
     <link href="admin.css" rel="stylesheet" />
+    <script>
+        function closeBox() {
+            document.getElementById("messagebox").style.display = "none";
+            document.getElementById("messageboxOverlay").style.display = "none";
+        }
+    </script>
+    <style>
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            width: 200px;
+            height: 100px;
+        }
+
+        .message-box-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal {
+            display:none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            width: 400px;
+        }
+
+            .modal h3 {
+                margin-top: 0;
+            }
+
+            .modal button {
+                margin-top: 10px;
+            }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="height: 200px; width: 1000px; margin-bottom: 20px;">
-            <asp:Image ID="Image1" runat="server" ImageUrl="/Assets/Media/onlinevent.comAdminBanner.png" />
+        <div class="banner">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Assets/Media/onlinevent.comAdminBanner.png" />
+        </div>
+        <div id="messageboxOverlay" class="message-box-overlay" onclick="closeBox()"></div>
+        <div id="messagebox" class="message-box">
+            <asp:Label ID="lblMessage" runat="server" Text="Mesaj Kaydedildi."></asp:Label>
         </div>
         <div class="container">
             <nav class="navbar">
@@ -29,7 +99,7 @@
                             <br />
                             <asp:TextBox ID="txtAdminNote" runat="server" Height="120px" TextMode="MultiLine" Width="500px" Text='<%# Eval("AdminNote") %>'></asp:TextBox><br />
                             <br />
-                            <asp:Button ID="btnSend" runat="server" Text="Gönder" Height="30px" Width="70px"  CommandName="Send" CommandArgument='<%# Eval("FeedbackId") %>' />
+                            <asp:Button ID="btnSend" runat="server" Text="Gönder" Height="30px" Width="70px" CommandName="Send" CommandArgument='<%# Eval("FeedbackId") %>' />
                             <br />
                             <br />
                             <hr />

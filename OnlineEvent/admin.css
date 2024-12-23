@@ -10,6 +10,10 @@ body {
     background-color: #e4e4e4;
 }
 
+.banner {
+    margin-bottom: 20px;
+}
+
 .container {
     display: flex;
 }

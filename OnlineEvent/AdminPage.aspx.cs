@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace OnlineEvent
 {
@@ -14,7 +15,7 @@ namespace OnlineEvent
         int feedbackId;
         protected void Page_Load(object sender, EventArgs e)
         {
-                db = Database.GetInstance();
+            db = Database.GetInstance();
             if (!IsPostBack)
             {
                 request = "1";
@@ -55,6 +56,21 @@ namespace OnlineEvent
                         }
                     }
                 }
+                //string script = "document.getElementById(\"messageboxOverlay\").style.display = \"block\"; document.getElementById(\"messsagebox\").style.display = \"block\";";
+                //ClientScript.RegisterStartupScript(this.GetType(), "messageboxScript", script, true);
+
+                string script = @"
+                                window.onload = function() {
+                                    document.getElementById('messageboxOverlay').style.display = 'block'; 
+                                    document.getElementById('messagebox').style.display = 'block';};";
+                ClientScript.RegisterStartupScript(this.GetType(), "messageboxScript", script, true);
+
+                //function openModal()
+                //{
+                //    document.getElementById("modalOverlay").style.display = "block";
+                //    document.getElementById("modal").style.display = "block";
+                //}
+
             }
         }
     }
