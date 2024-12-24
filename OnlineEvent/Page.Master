@@ -9,6 +9,13 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     <link href="style.css" rel="stylesheet" />
     <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+        }
         .auto-style1 {
             width: 100%;
         }
@@ -37,6 +44,7 @@
         .auto-style7 {
             width: 140px;
         }
+
         .auto-style8 {
             width: 100px;
         }
@@ -97,13 +105,15 @@
             </div>
         </div>
         <footer class="footer">
-            <asp:Label Text="ONLINE EVENT" runat="server"/>
-            <hr style="width: 1000px; color: gold;" />
-            <p>
-                Sadi Enis Güçlüer
-                <br />
-                İrem Ayten
-            </p>
+            <asp:Label Text="ONLINE EVENT" runat="server" />
+            <hr style="width: 1150px; color: white;" />
+            <br />
+            <a href="AdminLogin.aspx" style="color: gold;">Admin Giriş</a>
+            <br />
+            <br />
+            Sadi Enis Güçlüer
+            <br />
+            İrem Ayten
         </footer>
     </form>
 </body>

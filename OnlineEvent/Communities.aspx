@@ -33,6 +33,9 @@
         a {
             color: black
         }
+        .auto-style9 {
+            font-size: medium;
+        }
     </style>
 </asp:Content>
 
@@ -46,7 +49,7 @@
                 <div class="event">
                     <a href="Profiles/Commity.aspx?request=<%# Eval("CommunityID") %>">
                         <asp:Image ID="imgCom" runat="server" Width="200" ImageUrl="~/Assets/Media/42-photo11.jpg" />
-                        <asp:Label ID="lblComName" runat="server" Text='<%# Eval("CommunityName") %>' CssClass="label"></asp:Label>
+                        <asp:Label ID="lblComName" runat="server" Text='<%# Eval("CommunityName") %>' CssClass="auto-style9"></asp:Label>
                         <div class="hidden-content">
                             <asp:Label ID="lblCommunity" runat="server" Text='<%# Eval("CommunityName") %>'></asp:Label>
                         </div>

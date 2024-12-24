@@ -18,17 +18,63 @@ namespace OnlineEvent
             db = Database.GetInstance();
             if (!IsPostBack)
             {
-                request = "1";
+                request = Request.QueryString["request"];
 
                 using (SqlConnection con = db.GetConnection())
                 {
                     con.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT AdminName FROM Member.Admins WHERE AdminID = " + request, con))
+                    {
+                        lblAdmin.Text = cmd.ExecuteScalar().ToString();
+                    }
+                    using (SqlCommand cmd = new SqlCommand("SELECT UserID, Name, Surname, Username, Email, CreatedAt FROM Member.Users", con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            gridViewUsers.DataSource = dr;
+                            gridViewUsers.DataBind();
+                        }
+                    }
+                    using (SqlCommand cmd = new SqlCommand("SELECT CommunityID, CommunityName, ComminityUsername, Email, CreatedAt, City, CreatedBy AS Olusturan FROM Member.Communities", con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            gridViewCommunities.DataSource = dr;
+                            gridViewCommunities.DataBind();
+                        }
+                    }
+                    using (SqlCommand cmd = new SqlCommand("SELECT EventID, EventName, CommunityID, EventDate, TicketPrice FROM EventSystem.Events", con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            gridViewEvents.DataSource = dr;
+                            gridViewEvents.DataBind();
+                        }
+                    }
+                    using (SqlCommand cmd = new SqlCommand("SELECT SaleID, UserID, EventID, PurchaseDate FROM EventSystem.Sales", con))
+                    {
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            gridViewSales.DataSource = dr;
+                            gridViewSales.DataBind();
+                        }
+                    }
+                    //using (SqlCommand cmd = new SqlCommand("SELECT UserID, Name, Surname, Username, Email, CreatedAt FROM Member.Users", con))
+                    //{
+                    //    using (SqlDataReader dr = cmd.ExecuteReader())
+                    //    {
+                    //        gridViewUsers.DataSource = dr;
+                    //        gridViewUsers.DataBind();
+                    //    }
+                    //}
                     using (SqlCommand cmd = new SqlCommand("SELECT * FROM FeedbackMessages", con))
                     {
-                        SqlDataReader dr = cmd.ExecuteReader();
-
-                        datalistMessages.DataSource = dr;
-                        datalistMessages.DataBind();
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            datalistMessages.DataSource = dr;
+                            datalistMessages.DataBind();
+                        }
                     }
                 }
             }
@@ -72,6 +118,71 @@ namespace OnlineEvent
                 //}
 
             }
+        }
+
+        protected void btn_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string btnText = button.Text;
+            if (btnText == "Kullanıcılar")
+            {
+                pnlUsers.Visible = true;
+                pnlCommunities.Visible = false;
+                pnlEvents.Visible = false;
+                pnlSales.Visible = false;
+                pnlInfo.Visible = false;
+                pnlMessages.Visible = false;
+            }
+            else if (btnText == "Topluluklar")
+            {
+                pnlUsers.Visible = false;
+                pnlCommunities.Visible = true;
+                pnlEvents.Visible = false;
+                pnlSales.Visible = false;
+                pnlInfo.Visible = false;
+                pnlMessages.Visible = false;
+            }
+            else if (btnText == "Etkinlikler")
+            {
+                pnlUsers.Visible = false;
+                pnlCommunities.Visible = false;
+                pnlEvents.Visible = true;
+                pnlSales.Visible = false;
+                pnlInfo.Visible = false;
+                pnlMessages.Visible = false;
+            }
+            else if (btnText == "Satışlar")
+            {
+                pnlUsers.Visible = false;
+                pnlCommunities.Visible = false;
+                pnlEvents.Visible = false;
+                pnlSales.Visible = true;
+                pnlInfo.Visible = false;
+                pnlMessages.Visible = false;
+            }
+            else if (btnText == "Hakkımızda")
+            {
+                pnlUsers.Visible = false;
+                pnlCommunities.Visible = false;
+                pnlEvents.Visible = false;
+                pnlSales.Visible = false;
+                pnlInfo.Visible = true;
+                pnlMessages.Visible = false;
+            }
+            else if (btnText == "Mesajlar")
+            {
+                pnlUsers.Visible = false;
+                pnlCommunities.Visible = false;
+                pnlEvents.Visible = false;
+                pnlSales.Visible = false;
+                pnlInfo.Visible = false;
+                pnlMessages.Visible = true;
+            }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

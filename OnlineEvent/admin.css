@@ -20,7 +20,7 @@ body {
 
 .navbar {
     width: 200px;
-    height: 100%;
+    height: auto;
     background-color: #f44336;
     color: white;
     position: fixed;
@@ -53,4 +53,9 @@ body {
 
 .content {
     margin-left: 250px;
+}
+
+.grid-view td {
+    height: 40px;
+    text-align: center;
 }
