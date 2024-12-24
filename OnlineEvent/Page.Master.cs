@@ -30,7 +30,7 @@ namespace OnlineEvent
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/Search.aspx?request="+txtSearch.Text);
         }
 
         protected void btnEvents_Click(object sender, EventArgs e)

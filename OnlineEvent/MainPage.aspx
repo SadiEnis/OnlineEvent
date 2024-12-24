@@ -2,10 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-</style>
+        .btn {
+            margin-top: 165px;
+            margin-left: 400px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-top: 30px; height: 400px; color: black;">TEST RESİM</div>
+    <div>
+        <div style="margin-top: 30px; height: 500px; color: black; background-image: url('/Assets/Media/main.png');">
+            <asp:Button ID="btnCom" runat="server" Text="Topluluk Oluştur" Height="60px" Width="200px" CssClass="btn" />
+        </div>
+    </div>
     <br />
     test
     <br />
