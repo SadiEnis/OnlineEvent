@@ -19,8 +19,7 @@ namespace OnlineEvent.Profiles
             eventIds = new List<string>();
             if (!IsPostBack)
             {
-                communityId = "1";
-                //communityId = Request.QueryString["request"];
+                communityId = Request.QueryString["request"];
                 query = $"SELECT * FROM view_CommunityWithManagerName where CommunityID = {communityId}";
 
                 using (SqlConnection con = db.GetConnection())

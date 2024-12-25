@@ -78,7 +78,7 @@
                 <asp:Label ID="lblAdmin" runat="server" Text="Label" CssClass="auto-style2"></asp:Label>
                 <br />
                 </strong>
-                <asp:Panel ID="pnlUsers" runat="server">
+                <asp:Panel ID="pnlUsers" runat="server" >
                     <asp:GridView ID="gridViewUsers" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" Width="800px" CssClass="grid-view">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <FooterStyle BackColor="#CCCCCC" />

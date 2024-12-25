@@ -21,6 +21,7 @@
     border-radius: 0px;
     margin-top: 0px;
     margin-bottom: 50px;
+    z-index: 1000;
 }
 
 .login-button {

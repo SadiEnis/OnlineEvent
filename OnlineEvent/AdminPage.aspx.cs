@@ -79,6 +79,10 @@ namespace OnlineEvent
                 }
             }
         }
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gridViewUsers.PageIndex = e.NewPageIndex;
+        }
         protected void datalistMessages_ItemCommand(object source, DataListCommandEventArgs e)
         {
             if (e.CommandName == "Send")
