@@ -107,6 +107,10 @@
         <footer class="footer">
             <asp:Label Text="ONLINE EVENT" runat="server" />
             <hr style="width: 1150px; color: white;" />
+            Hakkımızda<br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblInfo" runat="server" Text="Label"></asp:Label>
+            <br />
             <br />
             <a href="AdminLogin.aspx" style="color: gold;">Admin Giriş</a>
             <br />

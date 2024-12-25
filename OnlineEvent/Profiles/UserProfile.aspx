@@ -285,10 +285,10 @@
                             <tr>
                                 <td class="auto-style21">&nbsp;</td>
                                 <td class="auto-style14">
-                                    <asp:Label ID="Label5" runat="server" Text="5"></asp:Label>
+                                    <asp:Label ID="Label5" runat="server" Text="0"></asp:Label>
                                 </td>
                                 <td class="auto-style13">
-                                    <asp:Label ID="Label6" runat="server" Text="3" CssClass="label-style"></asp:Label>
+                                    <asp:Label ID="Label6" runat="server" Text="0" CssClass="label-style"></asp:Label>
                                 </td>
                             </tr>
                             <tr>

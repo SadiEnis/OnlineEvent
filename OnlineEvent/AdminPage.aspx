@@ -136,7 +136,7 @@
 
                 <asp:Panel ID="pnlInfo" runat="server" Visible="False">
 
-                            <asp:TextBox ID="txtMessage" runat="server" Height="120px" TextMode="MultiLine" Width="500px" Enabled="False" Text='<%# Eval("Content") %>'></asp:TextBox><br />
+                            <asp:TextBox ID="txtInfo" runat="server" Height="120px" TextMode="MultiLine" Width="500px" Text='<%# Eval("Content") %>'></asp:TextBox><br />
                             <br />
                             <asp:Button ID="btnEdit" runat="server" Text="Gönder" Height="30px" Width="70px" CommandName="Send" CommandArgument='<%# Eval("FeedbackId") %>' OnClick="btnEdit_Click" />
                             <br />

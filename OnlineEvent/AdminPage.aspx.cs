@@ -60,14 +60,10 @@ namespace OnlineEvent
                             gridViewSales.DataBind();
                         }
                     }
-                    //using (SqlCommand cmd = new SqlCommand("SELECT UserID, Name, Surname, Username, Email, CreatedAt FROM Member.Users", con))
-                    //{
-                    //    using (SqlDataReader dr = cmd.ExecuteReader())
-                    //    {
-                    //        gridViewUsers.DataSource = dr;
-                    //        gridViewUsers.DataBind();
-                    //    }
-                    //}
+                    using (SqlCommand cmd = new SqlCommand("SELECT Content FROM SiteDescription", con))
+                    {
+                        txtInfo.Text = cmd.ExecuteScalar().ToString();
+                    }
                     using (SqlCommand cmd = new SqlCommand("SELECT * FROM FeedbackMessages", con))
                     {
                         using (SqlDataReader dr = cmd.ExecuteReader())
@@ -186,7 +182,12 @@ namespace OnlineEvent
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
+            using (SqlConnection con = db.GetConnection())
+            {
+                con.Open();
 
+                SqlCommand sqlCommand = new SqlCommand($"UPDATE SiteDescription SET Content = '{txtInfo.Text} ' WHERE ID = 1");
+            }
         }
     }
 }

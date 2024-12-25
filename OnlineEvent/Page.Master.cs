@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,12 @@ namespace OnlineEvent
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (SqlConnection con = Database.GetInstance().GetConnection())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Content FROM SiteDescription", con);
+                lblInfo.Text  = cmd.ExecuteScalar().ToString();
+            }
         }
 
         protected void btnSignIn_Click(object sender, EventArgs e)
@@ -30,7 +36,7 @@ namespace OnlineEvent
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Search.aspx?request="+txtSearch.Text);
+            Response.Redirect("/Search.aspx?request=" + txtSearch.Text);
         }
 
         protected void btnEvents_Click(object sender, EventArgs e)

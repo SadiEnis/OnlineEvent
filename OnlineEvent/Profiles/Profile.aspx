@@ -201,9 +201,10 @@
                                     <asp:Image ID="Image1" runat="server" CssClass="center-img" Height="100px" ImageUrl="~/Assets/Media/42-photo11.jpg" Width="100px" />
                                 </td>
                                 <td>
-                                    <asp:Label ID="Label1" runat="server" Text="Sadi Enis Güçlüer" CssClass="label-style"></asp:Label>
+                                    <asp:Label ID="lblName" runat="server" CssClass="label-style"></asp:Label>&nbsp;
+                                    <asp:Label ID="lblSurname" runat="server" Text="Sadi Enis Güçlüer" CssClass="label-style"></asp:Label>
                                     &nbsp;|&nbsp;
-                                    <asp:Label ID="Label2" runat="server" Text="@sadienis" CssClass="label-style"></asp:Label>
+                                    <asp:Label ID="lblUsername" runat="server" Text="@sadienis" CssClass="label-style"></asp:Label>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label3" runat="server" Text="Kayseri" CssClass="label-style"></asp:Label>
@@ -243,10 +244,10 @@
                             <tr>
                                 <td class="auto-style21">&nbsp;</td>
                                 <td class="auto-style14">
-                                    <asp:Label ID="Label5" runat="server" Text="5"></asp:Label>
+                                    <asp:Label ID="Label5" runat="server" Text="0"></asp:Label>
                                 </td>
                                 <td class="auto-style13">
-                                    <asp:Label ID="Label6" runat="server" Text="3" CssClass="label-style"></asp:Label>
+                                    <asp:Label ID="Label6" runat="server" Text="0" CssClass="label-style"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
